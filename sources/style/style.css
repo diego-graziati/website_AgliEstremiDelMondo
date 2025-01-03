@@ -1,0 +1,42 @@
+* {
+    font-family: "Times New Roman", Times, serif;
+}
+
+/*Laptops and desktops*/
+@media only screen and (min-width: 992px){
+    .mainPage-body{
+        background: url(src/background.png);
+        background-size: cover;
+    }
+
+    /*Gestisco il div per centrarlo nella pagina*/
+    .centeredDiv {
+        height: 200px;
+        width: 250px;
+        position:absolute;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+
+    /*Gestisco i singoli pulsanti*/
+    .btnLink{
+        display: block;
+        padding: 15px;
+        margin-bottom: 30px;
+        width: 100%;
+        border-radius: 50px;
+        color: white;
+        outline: none;
+        background: rgba(40, 40, 40, 0.95);
+        text-align: center;
+        text-decoration: none;
+    }
+    .btnLink h1 {
+        font-size: 16px;
+        font-style: normal;
+    }
+    .btnLink:hover{
+        background: rgba(211, 211, 211, 0.95);
+    }
+}
