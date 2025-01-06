@@ -1,13 +1,7 @@
 <?php
-
-    //$dataMap = '';
-
     function load_localization($selected_lang, $state){
-        echo "Lingua selezionata: $selected_lang<br>";
-        echo "Stato: $state<br>";
         $file_name = $selected_lang . '-' . $state . '.json';
         $file_path = LANG_DIR_PATH . $file_name;
-        echo "File path: $file_path<br>";
 
         // Controlla se il file esiste
         if (!file_exists($file_path)) {

@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 require_once 'sources/scripts/php/constants.php';
 require_once 'sources/scripts/php/translator.php';
 

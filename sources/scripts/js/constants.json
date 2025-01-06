@@ -1,6 +1,12 @@
 {
+    "PATH_SESSIONS_DIR": "sources/content/sessions/",
+    "PATH_PGS_DIR": "sources/content/pgs/",
+
     "LANG_INDEX_BTN_SESSIONS": "index.btn.sessions",
     "LANG_INDEX_BTN_PGS": "index.btn.pgs",
     "LANG_INDEX_BTN_LOCATIONS": "index.btn.locations",
-    "LANG_INDEX_BTN_FAMILIES": "index.btn.families"
+    "LANG_INDEX_BTN_FAMILIES": "index.btn.families",
+
+    "LANG_SESSIONS_SESSION_1_TITLE": "sessions.session_1.title",
+    "LANG_SESSIONS_SESSION_1_P1": "sessions.session_1.p1"
 }

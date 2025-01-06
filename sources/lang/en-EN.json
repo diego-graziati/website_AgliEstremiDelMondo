@@ -2,5 +2,8 @@
     "index.btn.sessions": "SESSIONS",
     "index.btn.pgs": "CHARACTERS",
     "index.btn.locations": "LOCATIONS",
-    "index.btn.families": "FAMILIES"
+    "index.btn.families": "FAMILIES",
+
+    "sessions.session_1.title": "SESSION 1",
+    "sessions.session_1.p1": "TEST PARAGRAPH #1"
 }

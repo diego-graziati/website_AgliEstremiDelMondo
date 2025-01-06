@@ -1,0 +1,9 @@
+{
+    "id": "session_1",
+    "sections":[{
+       "name": "sessions_section_1",
+       "title": "sessions.section_1.title",
+       "image": "",
+       "paragraphs": ["sessions.session_1.p1"]
+    }]
+}
