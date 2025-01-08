@@ -1,9 +1,12 @@
 {
+    "no.page.title.fallback": "pagina attuale",
+
     "index.btn.sessions": "SESSIONI",
     "index.btn.pgs": "PERSONAGGI",
     "index.btn.locations": "LUOGHI",
     "index.btn.families": "FAMIGLIE",
 
     "sessions.session_1.title": "SESSIONE 1",
-    "sessions.session_1.p1": "TEST PARAGRAFO #1"
+    "sessions.session_1.p1": "TEST PARAGRAFO #1",
+    "sessions.session_2.title": "SESSIONE 2"
 }

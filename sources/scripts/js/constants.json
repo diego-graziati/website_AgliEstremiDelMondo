@@ -1,6 +1,18 @@
 {
+    "CALLER_PAGE_INDEX": "index",
+    "CALLER_PAGE_CONTENT_DISPLAYER": "content_displayer",
+    "CALLER_PAGE_SINGLE_CONTENT_DISPLAYER": "single_content_displayer",
+
+    "CONTENT_TYPE_SESSIONS": "sessions",
+    "CONTENT_TYPE_PGS": "pgs",
+    "CONTENT_TYPE_LOCATIONS": "locations",
+    "CONTENT_TYPE_FAMILIES": "families",
+
     "PATH_SESSIONS_DIR": "sources/content/sessions/",
     "PATH_PGS_DIR": "sources/content/pgs/",
+    "PATH_SESSIONS_DEFAULT_CARD_IMAGE": "sources/style/src/sessions_card_image.png",
+
+    "LANG_NO_PAGE_TITLE_FALLBACK": "no.page.title.fallback",
 
     "LANG_INDEX_BTN_SESSIONS": "index.btn.sessions",
     "LANG_INDEX_BTN_PGS": "index.btn.pgs",
@@ -8,5 +20,6 @@
     "LANG_INDEX_BTN_FAMILIES": "index.btn.families",
 
     "LANG_SESSIONS_SESSION_1_TITLE": "sessions.session_1.title",
-    "LANG_SESSIONS_SESSION_1_P1": "sessions.session_1.p1"
+    "LANG_SESSIONS_SESSION_1_P1": "sessions.session_1.p1",
+    "LANG_SESSIONS_SESSION_2_TITLE": "sessions.session_2.title"
 }

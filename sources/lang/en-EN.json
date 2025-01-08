@@ -1,4 +1,6 @@
 {
+    "no.page.title.fallback": "current page",
+
     "index.btn.sessions": "SESSIONS",
     "index.btn.pgs": "CHARACTERS",
     "index.btn.locations": "LOCATIONS",

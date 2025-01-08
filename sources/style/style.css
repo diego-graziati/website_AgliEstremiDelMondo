@@ -2,8 +2,15 @@
     font-family: "Times New Roman", Times, serif;
 }
 
+:root {
+    --bg-color: #222;
+    --surface-color: #555;
+    --on-bg-color: #DDD;
+    --on-surface-color: #CCC;
+}
+
 /*Laptops and desktops*/
-@media only screen and (min-width: 992px){
+/*@media only screen and (min-width: 992px){*/
     .mainPage-body{
         background: url(src/background.png);
         background-size: cover;
@@ -40,19 +47,153 @@
         background: rgba(211, 211, 211, 0.95);
     }
 
+    .body_class {
+        background-color: var(--bg-color);
+    }
+
+    #pages_navigator {
+        background-color: var(--surface-color);
+        padding: 10px;
+        margin-bottom: 5px;
+        color: var(--on-surface-color);
+    }
+
+    #pages_navigator a {
+        color: var(--on-surface-color);
+        text-decoration: underline;
+    }
+
+    #pages_navigator a:hover {
+        cursor: pointer;
+    }
+
+    #pages_navigator span {
+        cursor: default;
+    }
+
+    #pages_navigator a:visited {
+        color: var(--on-surface-color);
+    }
+
+    /* Cards */
+    .cards_box {
+        display: flex; /* Usa Flexbox */
+        flex-wrap: wrap; /* Permette alle card di andare a capo */
+        gap: 16px; /* Spaziatura tra le card */
+        justify-content: center; /* Centra le card orizzontalmente */
+        align-items: flex-start; /* Allinea le card in alto */
+        padding: 16px; /* Spaziatura interna */
+        overflow: hidden;
+    }
+
+    .card-anchor {
+        width: 200px;
+        height: 400px;
+        display: inline-block;
+        margin-right: 20px;
+        margin-bottom: 10px;
+        background-color: var(--surface-color);
+    }
+
+    .card-anchor:hover {
+        cursor: pointer;
+    }
+
     .card {
-        /* Add shadows to create the "card" effect */
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        width: 100%;
+        height: 100%;
+        box-shadow: 0 4px 8px 0 var(--on-bg-color);
         transition: 0.3s;
     }
 
-    /* On mouse-over, add a deeper shadow */
     .card:hover {
-        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        box-shadow: 0 8px 16px 0 var(--on-bg-color);
     }
 
-    /* Add some padding inside the card container */
-    .card-container {
-        padding: 2px 16px;
+    .card-image {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
     }
-}
+
+    .card-container {
+        width: 90%;
+        height: 100px;
+        padding-left: 5%;
+        padding-right: 5%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        background-color: var(--surface-color);
+    }
+
+    .card-title {
+        font-weight: bold;
+        color: var(--on-surface-color);
+    }
+
+    .card-container p {
+        color: var(--on-surface-color);
+    }
+
+    /* Sections and dots */
+    #progress-indicator {
+        position: fixed;
+        top: 50%;
+        left: 20px;
+        transform: translateY(-50%);
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        z-index: 1000;
+    }
+
+    .dot {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: #ddd;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    .dot.active {
+        background-color: #333;
+    }
+
+    /* Sezioni (come già definite prima) */
+    /* Generali */
+    #page_content {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    #container {
+        display: flex;
+        flex-direction: column;
+        height: 100vh; /* Occupare l'intera altezza del viewport */
+        scroll-snap-type: y mandatory; /* Abilitare il comportamento snap */
+        overflow-y: scroll;
+    }
+
+    .section {
+        flex: 0 0 100vh; /* Ogni sezione occupa l'intero viewport */
+        scroll-snap-align: start; /* Snap all'inizio di ogni sezione */
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Centrare i contenuti verticalmente */
+        align-items: center; /* Centrare i contenuti orizzontalmente */
+        background-color: #f4f4f4; /* Colore di sfondo */
+        border: 1px solid #ddd; /* Bordo sottile per ogni sezione */
+    }
+
+    .section p {
+        margin: 10px 0;
+        font-size: 1.2em;
+        text-align: center;
+    }
+
+/*}*/

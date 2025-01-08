@@ -4,5 +4,10 @@
         "title": "sessions.session_1.title",
         "date": "",
         "card-image": ""
+    },{
+        "id": "session_2",
+        "title": "sessions.session_2.title",
+        "date": "",
+        "card-image": ""
     }]
 }

@@ -2,8 +2,6 @@
 function obtain_contents_list_file($content_type){
     $contents_list_file_path = CONTENT_DIR_PATH . $content_type . '/contents_list.json';
 
-    echo "<p>Contents_list_file_path: $contents_list_file_path</p>";
-
     // Controlla se il file esiste
     if (!file_exists($contents_list_file_path)) {
         die("Errore: Il file JSON non esiste.");
@@ -14,7 +12,6 @@ function obtain_contents_list_file($content_type){
 
     // Decodifica il JSON in un array associativo
     $data = json_decode($jsonContent, true)["contents_list"];
-    print_r($data);
 
     // Controlla eventuali errori di decodifica
     if (json_last_error() !== JSON_ERROR_NONE) {
@@ -30,7 +27,7 @@ function obtain_contents_list_file($content_type){
 }
 
 function obtain_content_file($content_type, $content_id){
-    $content_file_path = CONTENT_DIR_PATH . $content_type . '/' . $content_id . '.json';
+    $content_file_path = CONTENT_DIR_PATH . $content_type . '/single-sessions/' . $content_id . '.json';
 
     // Controlla se il file esiste
     if (!file_exists($content_file_path)) {
