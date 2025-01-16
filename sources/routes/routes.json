@@ -1,0 +1,11 @@
+{
+    "routes": [],
+    "fallback_route": {
+        "route_name": "",
+        "php_file_path": "index.php",
+        "post_parameters": [{
+            "name": "caller-page",
+            "value": ""
+        }]
+    }
+}

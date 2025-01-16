@@ -1,0 +1,33 @@
+{
+    "routes": [
+        {
+            "route_name": "sessions",
+            "php_file_path": "content_displayer.php",
+            "post_parameters": [{
+                "name": "caller-page",
+                "value": ""
+            },{
+                "name": "content-type",
+                "value": "sessions"
+            }],
+            "children": [{
+                "route_name": "session_1",
+                "php_file_path": "single_content_displayer.php",
+                "post_parameters": [{
+                    "name": "caller-page",
+                    "value": ""
+                },{
+                    "name": "content-type",
+                    "value": "sessions"
+                },{
+                    "name": "content-id",
+                    "value": "session_1"
+                },{
+                    "name": "content-title",
+                    "value": ""
+                }],
+                "children": []
+            }]
+        }
+    ]
+}

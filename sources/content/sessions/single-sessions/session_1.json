@@ -1,9 +1,14 @@
 {
     "id": "session_1",
     "sections":[{
-       "name": "sessions_section_1",
-       "title": "sessions.section_1.title",
-       "image": "",
-       "paragraphs": ["sessions.session_1.p1"]
+        "name": "sessions_section_1",
+        "title": "sessions.section_1.title",
+        "image": "",
+        "paragraphs": ["sessions.session_1.p1"]
+    },{
+        "name": "sessions_section_2",
+        "title": "sessions.section_2.title",
+        "image": "",
+        "paragraphs": ["sessions.session_2.p2"]
     }]
 }
