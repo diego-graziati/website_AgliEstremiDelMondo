@@ -6,6 +6,7 @@
         "post_parameters": [{
             "name": "caller-page",
             "value": ""
-        }]
+        }],
+        "children": []
     }
 }

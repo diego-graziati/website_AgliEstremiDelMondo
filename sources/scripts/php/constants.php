@@ -14,9 +14,12 @@ const POST_VAR_CONTENT_TYPE = SESSION_VAR_CONTENT_TYPE;
 const POST_VAR_CONTENT_ID = SESSION_VAR_CONTENT_ID;
 const POST_VAR_CONTENT_TITLE = SESSION_VAR_CONTENT_TITLE;
 
+const MAX_ROUTING_DEPTH = 2;
+
 //Path constants
 define('LANG_DIR_PATH', __DIR__ . '/../../lang/');
 define('CONTENT_DIR_PATH', __DIR__ . '/../../content/');
+define('ROUTES_DIR_PATH', CONTENT_DIR_PATH . 'routes/');
 
 //Localization constants
 
