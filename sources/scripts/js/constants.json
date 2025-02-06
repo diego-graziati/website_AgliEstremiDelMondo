@@ -12,6 +12,12 @@
     "PATH_PGS_DIR": "sources/content/pgs/",
     "PATH_SESSIONS_DEFAULT_CARD_IMAGE": "sources/style/src/sessions_card_image.png",
 
+    "ROUTING_PATH_INDEX": "/",
+    "ROUTING_PATH_SESSIONS": "/sessions",
+    "ROUTING_PATH_PGS": "/pgs",
+    "ROUTING_PATH_LOCATIONS": "/locations",
+    "ROUTING_PATH_FAMILIES": "/families",
+
     "LANG_NO_PAGE_TITLE_FALLBACK": "no.page.title.fallback",
 
     "LANG_INDEX_BTN_SESSIONS": "index.btn.sessions",

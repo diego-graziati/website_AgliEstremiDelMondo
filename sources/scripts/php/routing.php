@@ -60,7 +60,7 @@
             return $actual_route;
         }
 
-        public function callRoute($route_info) {
+        public function callRoute($route_info, $post_body_params) {
             if (!isset($route_info['php_file_path']) || !file_exists($route_info['php_file_path'])) {
                 die("Errore: Il file di destinazione non esiste.");
             }
@@ -70,6 +70,14 @@
 
             // Parametri POST da inviare
             $post_parameters = $route_info['post_parameters'] ?? [];
+
+            if($post_body_params != ""){
+                foreach ($post_body_params as $param) {
+                    if(isset($post_parameters[$param["name"]])){
+                        $post_parameters[$param["name"]] = $param["value"];
+                    }
+                }
+            }
 
             // Inizializza cURL
             $ch = curl_init();

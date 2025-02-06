@@ -97,10 +97,13 @@
                 content_type_anchor.innerText = content_type;
                 content_type_anchor.addEventListener("click", function(event) {
                     event.preventDefault(); // Previene il comportamento predefinito del link
-                    const data = {
-                        "caller-page": constants.CALLER_PAGE_SINGLE_CONTENT_DISPLAYER,
-                        "content-type": content_type
-                    }
+                    const data = [{
+                            "name": "caller-page",
+                            "value": constants.CALLER_PAGE_SINGLE_CONTENT_DISPLAYER
+                        },{
+                            "name": "content-type",
+                            "value": content_type
+                        }];
                     redirectWithPost("content_displayer.php", data);
                 });
                 const second_intermediary_span = document.createElement("span");

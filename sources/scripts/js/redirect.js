@@ -1,6 +1,15 @@
 function redirectWithPost(url, data) {
+
+    fetch(url, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: data
+    });
+
     // Creazione di un form HTML nascosto
-    const form = document.createElement('form');
+    /*const form = document.createElement('form');
     form.method = 'POST';
     form.action = url;
 
@@ -20,5 +29,5 @@ function redirectWithPost(url, data) {
     document.body.appendChild(form);
     form.submit();
     // Pulizia: rimuovi il form dal DOM dopo l'invio
-    document.body.removeChild(form);
+    document.body.removeChild(form);*/
 }

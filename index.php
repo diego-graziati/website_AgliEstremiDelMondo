@@ -73,35 +73,47 @@
                 const families_link = document.getElementById("families_link");
                 sessions_link.addEventListener('click', function(event) {
                     event.preventDefault(); // Previene il comportamento predefinito del link
-                    const data = {
-                        "caller-page": constants.CALLER_PAGE_INDEX,
-                        "content-type": constants.CONTENT_TYPE_SESSIONS
-                    }
-                    redirectWithPost("content_displayer.php", data);
+                    const data = [{
+                            "name": "caller-page",
+                            "value": constants.ROUTING_PATH_INDEX
+                        },{
+                            "name": "content-type",
+                            "value": constants.CONTENT_TYPE_SESSIONS
+                        }];
+                    redirectWithPost(constants.ROUTING_PATH_SESSIONS, data);
                 });
                 pgs_link.addEventListener('click', function(event) {
                     event.preventDefault(); // Previene il comportamento predefinito del link
-                    const data = {
-                        "caller-page": constants.CALLER_PAGE_INDEX,
-                        "content-type": constants.CONTENT_TYPE_PGS
-                    }
-                    redirectWithPost("content_displayer.php", data);
+                    const data = [{
+                            "name": "caller-page",
+                            "value": constants.ROUTING_PATH_INDEX
+                        },{
+                            "name": "content-type",
+                            "value": constants.CONTENT_TYPE_PGS
+                        }];
+                    redirectWithPost(constants.ROUTING_PATH_PGS, data);
                 });
                 locations_link.addEventListener('click', function(event) {
                     event.preventDefault(); // Previene il comportamento predefinito del link
-                    const data = {
-                        "caller-page": constants.CALLER_PAGE_INDEX,
-                        "content-type": constants.CONTENT_TYPE_LOCATIONS
-                    }
-                    redirectWithPost("content_displayer.php", data);
+                    const data = [{
+                            "name": "caller-page",
+                            "value": constants.ROUTING_PATH_INDEX
+                        },{
+                            "name": "content-type",
+                            "value": constants.CONTENT_TYPE_LOCATIONS
+                        }];
+                    redirectWithPost(constants.ROUTING_PATH_LOCATIONS, data);
                 });
                 families_link.addEventListener('click', function(event) {
                     event.preventDefault(); // Previene il comportamento predefinito del link
-                    const data = {
-                        "caller-page": constants.CALLER_PAGE_INDEX,
-                        "content-type": constants.CONTENT_TYPE_FAMILIES
-                    }
-                    redirectWithPost("content_displayer.php", data);
+                    const data = [{
+                            "name": "caller-page",
+                            "value": constants.ROUTING_PATH_INDEX
+                        },{
+                            "name": "content-type",
+                            "value": constants.CONTENT_TYPE_FAMILIES
+                        }];
+                    redirectWithPost(constants.ROUTING_PATH_FAMILIES, data);
                 });
 
                 const session_txt = document.getElementById("sessions_txt");
