@@ -33,9 +33,9 @@
                         error_log("[".date("Y-M-D h:m:s")."] [Error] [routing.php -> __construct function] Php file path ".ROOT_DIR_PATH."/".$this->fallback_route['php_file_path']." doesn't exist\n" , 3, PHP_LOGS_FILE_PATH);
                         die();
                     }else{
-                        error_log("[".date("Y-M-D h:m:s")."] [Error] [routing.php -> __construct function] Php file path ".ROOT_DIR_PATH."/".$this->fallback_route['php_file_path']." exists\n" , 3, PHP_LOGS_FILE_PATH);
+                        error_log("[".date("Y-M-D h:m:s")."] [Info] [routing.php -> __construct function] Php file path ".ROOT_DIR_PATH."/".$this->fallback_route['php_file_path']." exists\n" , 3, PHP_LOGS_FILE_PATH);
                     }
-                    $this->fallback_route['php_file_path'] = PROTOCOL . HOST . "/" . $this->fallback_route['php_file_path'];
+                    $this->fallback_route['actual_php_file_path'] = PROTOCOL . HOST . "/" . $this->fallback_route['php_file_path'];
                 }
             }
             error_log("[".date("Y-M-D h:m:s")."] [Info] [routing.php -> __construct] Router initialized\n" , 3, PHP_LOGS_FILE_PATH);
@@ -53,9 +53,9 @@
                     error_log("[".date("Y-M-D h:m:s")."] [Error] [routing.php -> processRoutes function] Php file path ".ROOT_DIR_PATH."/".$route_copy['php_file_path']." doesn't exist\n" , 3, PHP_LOGS_FILE_PATH);
                     die();
                 }else{
-                    error_log("[".date("Y-M-D h:m:s")."] [Error] [routing.php -> processRoutes function] Php file path ".ROOT_DIR_PATH."/".$route_copy['php_file_path']." exists\n" , 3, PHP_LOGS_FILE_PATH);
+                    error_log("[".date("Y-M-D h:m:s")."] [Info] [routing.php -> processRoutes function] Php file path ".ROOT_DIR_PATH."/".$route_copy['php_file_path']." exists\n" , 3, PHP_LOGS_FILE_PATH);
                 }
-                $route_copy['php_file_path'] = PROTOCOL . HOST . "/" . $route_copy['php_file_path'];
+                $route_copy['actual_php_file_path'] = PROTOCOL . HOST . "/" . $route_copy['php_file_path'];
                 unset($route_copy['children']);
 
                 // Aggiungi la route all'array associativo.
@@ -86,7 +86,7 @@
             }
 
             // URL di destinazione
-            $url = $route_info['php_file_path'];
+            $url = $route_info['actual_php_file_path'];
 
             // Parametri POST da inviare
             $post_parameters = $route_info['post_parameters'] ?? [];
@@ -108,8 +108,8 @@
             curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($post_parameters));
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true); // Per ricevere la risposta
             curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true); // Segue automaticamente il redirect
+            curl_setopt($ch, CURLOPT_TIMEOUT, 5);
 
-            error_log("[".date("Y-M-D h:m:s")."] [Info] [routing.php -> callRoute function] Curl channel object: " . print_r($ch,true)."\n", 3, PHP_LOGS_FILE_PATH);
             // Esegui la richiesta
             $response = curl_exec($ch);
 
@@ -117,6 +117,8 @@
             if ($response === false) {
                 error_log("[".date("Y-M-D h:m:s")."] [Error] [routing.php -> callRoute function] POST call error: " . curl_error($ch)."\n", 3, PHP_LOGS_FILE_PATH);
                 die();
+            }else{
+                error_log("[".date("Y-M-D h:m:s")."] [Info] [routing.php -> callRoute function] POST call response: " . print_r($response, true) ."\n", 3, PHP_LOGS_FILE_PATH);
             }
 
             // Chiudi la sessione cURL

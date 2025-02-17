@@ -2,32 +2,6 @@
     require_once 'sources/scripts/header.php';
 
     $caller_page = "";
-
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        // Leggi il corpo della richiesta
-        $caller_page = isset($_POST[POST_VAR_CALLER_PAGE]) ? $_POST[POST_VAR_CALLER_PAGE] : "";
-
-        if($content_type != "" && $caller_page != ""){
-            $_SESSION[SESSION_VAR_CALLER_PAGE] = $caller_page;
-
-            header('Location: index.php');
-        }else{
-            header('Location: index.php');  //Fallback
-        }
-    }else if($_SERVER['REQUEST_METHOD'] === 'GET'){
-        // Leggi i dati dalla sessione
-        $caller_page = isset($_SESSION[SESSION_VAR_CALLER_PAGE]) ? $_SESSION[SESSION_VAR_CALLER_PAGE] : "";
-
-        if($caller_page == CALLER_PAGE_SINGLE_CONTENT_DISPLAYER) {
-            // Pulisci i dati dalla sessione dopo averli usati
-            unset($_SESSION[SESSION_VAR_CONTENT_TYPE]);
-            unset($_SESSION[SESSION_VAR_CONTENT_ID]);
-            unset($_SESSION[SESSION_VAR_CONTENT_TITLE]);
-        }else if($caller_page == CALLER_PAGE_CONTENT_DISPLAYER){
-            unset($_SESSION[SESSION_VAR_CONTENT_TYPE]);
-        }
-        unset($_SESSION[SESSION_VAR_CALLER_PAGE]);
-    }
 ?>
 
 <!DOCTYPE html>
