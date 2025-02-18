@@ -3,9 +3,13 @@
     "fallback_route": {
         "route_name": "",
         "php_file_path": "index.php",
+        "actual_file_path": "index.php",
         "post_parameters": [{
             "name": "caller-page",
             "value": ""
+        },{
+            "name": "internal-request",
+            "value": false
         }],
         "children": []
     }

@@ -3,16 +3,21 @@
         {
             "route_name": "sessions",
             "php_file_path": "content_displayer.php",
+            "actual_file_path": "content_displayer.php",
             "post_parameters": [{
                 "name": "caller-page",
                 "value": ""
             },{
                 "name": "content-type",
                 "value": "sessions"
+            },{
+                "name": "internal-request",
+                "value": false
             }],
             "children": [{
                 "route_name": "session_1",
                 "php_file_path": "single_content_displayer.php",
+                "actual_file_path": "single_content_displayer.php",
                 "post_parameters": [{
                     "name": "caller-page",
                     "value": ""
@@ -25,6 +30,9 @@
                 },{
                     "name": "content-title",
                     "value": ""
+                },{
+                    "name": "internal-request",
+                    "value": false
                 }],
                 "children": []
             }]
