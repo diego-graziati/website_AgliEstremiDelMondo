@@ -34,6 +34,16 @@
                         die();
                     }
                     $this->fallback_route['actual_php_file_path'] = PROTOCOL . HOST . "/" . $this->fallback_route['php_file_path'];
+
+                    // Creo un array associativo per i parametri della POST per meglio utilizzarli successivamente.
+                    $post_parameters_list = $this->fallback_route['post_parameters'];
+                    $actual_parameter_list = [];
+                    foreach($post_parameters_list as $parameter){
+                        $parameter_name = $parameter['name'];
+                        $parameter_value = $parameter['value'];
+                        $actual_parameter_list[$parameter_name] = $parameter_value;
+                    }
+                    $this->fallback_route['post_parameters'] = $actual_parameter_list;
                 }
             }
             error_log("[".date("Y-M-D h:m:s")."] [Info] [routing.php -> __construct] Router initialized\n" , 3, PHP_LOGS_FILE_PATH);
@@ -53,6 +63,16 @@
                 }
                 $route_copy['actual_php_file_path'] = PROTOCOL . HOST . "/" . $route_copy['php_file_path'];
                 unset($route_copy['children']);
+
+                // Create a post parameters associative array, to make it easier in the future to use the post parameters.
+                $post_parameters_list = $route_copy['post_parameters'];
+                $actual_parameter_list = [];
+                foreach($post_parameters_list as $parameter){
+                    $parameter_name = $parameter['name'];
+                    $parameter_value = $parameter['value'];
+                    $actual_parameter_list[$parameter_name] = $parameter_value;
+                }
+                $route_copy['post_parameters'] = $actual_parameter_list;
 
                 // Aggiungi la route all'array associativo.
                 $this->routes[$current_path] = $route_copy;
@@ -87,16 +107,16 @@
             // Parametri POST da inviare
             $post_parameters = $route_info['post_parameters'] ?? [];
 
-            if($post_body_params != ""){
-                foreach ($post_body_params as $param) {
-                    if(isset($post_parameters[$param["name"]])){
-                        $post_parameters[$param["name"]] = $param["value"];
+            if(!empty($post_body_params)){
+                foreach ($post_body_params as $name=>$value) {
+                    if(isset($post_parameters[$name])){
+                        $post_parameters[$name] = $value;
                     }
                 }
             }
 
             // Per evitare loop infiniti e capire chi stia esattamente compiendo la richiesta, inseriamo il seguente flag
-            $post_parameters['internal_request'] = true;
+            $post_parameters['internal-request'] = true;
 
             // Inizializza cURL
             $ch = curl_init();
@@ -120,8 +140,6 @@
             if ($response === false) {
                 error_log("[".date("Y-M-D h:m:s")."] [Error] [routing.php -> callRoute function] POST call error: " . curl_error($ch)."\n", 3, PHP_LOGS_FILE_PATH);
                 die();
-            }else{
-                error_log("[".date("Y-M-D h:m:s")."] [Info] [routing.php -> callRoute function] POST call response: " . print_r($response, true) ."\n", 3, PHP_LOGS_FILE_PATH);
             }
 
             // Chiudi la sessione cURL

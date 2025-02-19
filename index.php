@@ -2,6 +2,7 @@
     require_once 'sources/scripts/header.php';
 
     $caller_page = "";
+    error_log("[".date("Y-M-D h:m:s")."] [Info] [index.php] Index page successfully called\n", 3, PHP_LOGS_FILE_PATH);
 ?>
 
 <!DOCTYPE html>
